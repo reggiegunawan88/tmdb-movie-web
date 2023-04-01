@@ -1,0 +1,1 @@
+This constants folder contains single or multiple file for fixed variable constant value

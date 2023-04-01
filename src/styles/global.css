@@ -1,0 +1,65 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  /* thin */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 100;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-Thin.ttf') format('truetype');
+  }
+  /* extralight */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 200;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-ExtraLight.ttf') format('truetype');
+  }
+  /* light */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-Light.ttf') format('truetype');
+  }
+  /* normal */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+  }
+  /* medium */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-Medium.ttf') format('truetype');
+  }
+  /* semibold */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-SemiBold.ttf') format('truetype');
+  }
+  /* bold */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Inter/static/Inter-Bold.ttf') format('truetype');
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

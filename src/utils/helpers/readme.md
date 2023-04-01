@@ -1,0 +1,1 @@
+This helpers folder contains function that can be re-use for many cases (string manipulation, converter, etc)
