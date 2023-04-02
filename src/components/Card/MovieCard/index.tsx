@@ -8,7 +8,7 @@ interface IProps {
 
 const MovieCard = ({ data }: IProps) => {
   return (
-    <div className="flex flex-col space-y-2 cursor-pointer h-fit">
+    <div className="flex flex-col space-y-2 cursor-pointer h-fit transform transition duration-500 hover:scale-105">
       <div className="relative w-[150px] h-[225px] overflow-hidden rounded-md">
         <Image
           alt="movie-poster"
