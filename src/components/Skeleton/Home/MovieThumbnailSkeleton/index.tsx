@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HorizontalMovieListSkeleton = () => {
+const MovieThumbnailSkeleton = () => {
   return (
     <div className="flex overflow-scroll p-2 space-x-3 hide-scrollbar">
       {[...Array(5)].map(index => (
@@ -17,4 +17,4 @@ const HorizontalMovieListSkeleton = () => {
   );
 };
 
-export default HorizontalMovieListSkeleton;
+export default MovieThumbnailSkeleton;

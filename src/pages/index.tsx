@@ -3,11 +3,11 @@ import { ReactNode } from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import useHome from '@/hooks/pages/useHome';
 import Searchbar from '@/components/Searchbar';
-import MovieCard from '@/components/Card/MovieCard';
 
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Link from 'next/link';
-import HorizontalMovieListSkeleton from '@/components/Skeleton/Home/HorizontalMovieListSkeleton';
+import MovieThumbnailCard from '@/components/Card/MovieThumbnailCard';
+import MovieThumbnailSkeleton from '@/components/Skeleton/Home/MovieThumbnailSkeleton';
 
 const Home = () => {
   const { popularMovies, topRatedMovies } = useHome();
@@ -17,7 +17,7 @@ const Home = () => {
       <Searchbar />
       <div className="flex flex-col flex-1">
         <div className="flex flex-col space-y-2">
-          <Link passHref href="/popular">
+          <Link passHref href="/movie/popular">
             <div className="flex flex-row items-center gap-x-2 cursor-pointer hover:text-blue-3">
               <span className="text-xl font-semibold">Trending</span>
               <ChevronRightIcon fontSize="medium" />
@@ -25,16 +25,17 @@ const Home = () => {
           </Link>
           {popularMovies ? (
             <div className="flex overflow-scroll p-2 space-x-3 hide-scrollbar">
-              {popularMovies?.map((item: any) => (
-                <MovieCard key={item?.id} data={item} />
+              {popularMovies?.slice(0, 10).map((item: any) => (
+                <MovieThumbnailCard key={item?.id} data={item} />
               ))}
             </div>
           ) : (
-            <HorizontalMovieListSkeleton />
+            // skeleton loading
+            <MovieThumbnailSkeleton />
           )}
         </div>
         <div className="flex flex-col space-y-2">
-          <Link passHref href="/top-rated">
+          <Link passHref href="/movie/top-rated">
             <div className="flex flex-row items-center gap-x-2 cursor-pointer hover:text-blue-3 w-fit">
               <span className="text-xl font-semibold">Top Rated</span>
               <ChevronRightIcon fontSize="medium" />
@@ -42,12 +43,13 @@ const Home = () => {
           </Link>
           {topRatedMovies ? (
             <div className="flex overflow-scroll p-2 space-x-3 hide-scrollbar">
-              {topRatedMovies?.map((item: any) => (
-                <MovieCard key={item?.id} data={item} />
+              {topRatedMovies?.slice(0, 10).map((item: any) => (
+                <MovieThumbnailCard key={item?.id} data={item} />
               ))}
             </div>
           ) : (
-            <HorizontalMovieListSkeleton />
+            // skeleton loading
+            <MovieThumbnailSkeleton />
           )}
         </div>
       </div>
