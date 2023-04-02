@@ -12,15 +12,15 @@ const fetcher = (fetchConfig: IFetchConfig) => {
   const { url, method } = fetchConfig;
 
   // token is obtained from TMDB account setting
-  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzExYWVjN2RkNGI1MmQ2NzYzNTRhZjc4MjMwMTVjOSIsInN1YiI6IjY0MjcwNjlhYTNlNGJhMDExMTQ5OTY5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Po06XzDWVfnMCXntYmld_vOZccOAze5sqxPAv5_2_cg'
+  const token =
+    'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYzExYWVjN2RkNGI1MmQ2NzYzNTRhZjc4MjMwMTVjOSIsInN1YiI6IjY0MjcwNjlhYTNlNGJhMDExMTQ5OTY5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Po06XzDWVfnMCXntYmld_vOZccOAze5sqxPAv5_2_cg';
 
   // set req options
   let options = {
     method,
     headers: {
-      Accept: 'application/json, multipart/form-data',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   };
 
