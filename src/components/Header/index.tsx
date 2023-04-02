@@ -14,7 +14,10 @@ const Header = () => {
         <div className="hidden relative w-[154px] h-5 laptop:block">
           <Image alt="tmdb-logo" src="/assets/images/tmdb_logo.svg" layout="fill" />
         </div>
-        <PersonIcon className="text-white" fontSize="medium" />
+        <div className="flex flex-row items-center space-x-1 text-white">
+          <PersonIcon fontSize="medium" />
+          <span className="text-sm">user@email.com</span>
+        </div>
       </div>
     </div>
   );
