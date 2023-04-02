@@ -13,7 +13,7 @@ const MovieCard = ({ data }: IProps) => {
         src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${data?.poster_path}`}
         width={94}
         height={141}
-        className="rounded-l-md object-cover"
+        className="rounded-l-md object-contain"
       />
       <div className="flex flex-col p-3 gap-y-5">
         <div className="flex flex-col">

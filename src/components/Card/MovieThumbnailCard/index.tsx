@@ -1,14 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 import formatDate from '@/helpers/formatDate';
+import useCard from '@/hooks/component/Card/useCard';
 
 interface IProps {
   data: any;
 }
 
 const MovieThumbnailCard = ({ data }: IProps) => {
+  const { redirectToMovieDetail } = useCard({ movieId: data?.id });
+
   return (
-    <div className="w-fit flex flex-col space-y-2 cursor-pointer h-fit transform transition duration-500 hover:scale-105">
+    <div
+      className="w-fit flex flex-col space-y-2 cursor-pointer h-fit transform transition duration-500 hover:scale-105"
+      onClick={redirectToMovieDetail}
+    >
       <div className="relative w-[150px] h-[225px] overflow-hidden rounded-md">
         <Image
           alt="movie-poster"
