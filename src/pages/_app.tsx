@@ -5,7 +5,8 @@ import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 
-import { store } from '@/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from '@/store';
 
 import { Provider } from 'react-redux';
 import Meta from '@/components/SEO/Meta';
@@ -24,8 +25,10 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return getLayout(
     <Provider store={store}>
-      <Meta />
-      <Component {...pageProps} />
+      <PersistGate loading={null} persistor={persistor}>
+        <Meta />
+        <Component {...pageProps} />
+      </PersistGate>
     </Provider>,
   );
 };
