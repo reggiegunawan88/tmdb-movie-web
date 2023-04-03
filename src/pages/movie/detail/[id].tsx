@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import MainLayout from '@/layouts/MainLayout';
 import LoadingState from '@/components/LoadingState';
-import Review from '@/components/Review';
 import ImageSection from '@/components/Pages/MovieDetail/ImageSection';
 import DescriptionSection from '@/components/Pages/MovieDetail/DescriptionSection';
+import ReviewSection from '@/components/Pages/MovieDetail/ReviewSection';
 import useMovieDetail from '@/hooks/pages/Detail/useMovieDetail';
 
 const Detail = () => {
@@ -29,7 +29,7 @@ const Detail = () => {
       </div>
 
       {/* review section */}
-      <Review data={movieData} />
+      <ReviewSection data={movieData} />
     </div>
   );
 };

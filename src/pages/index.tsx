@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 
-import MainLayout from '@/layouts/MainLayout';
-import useHome from '@/hooks/pages/Home/useHome';
-import Searchbar from '@/components/Searchbar';
-import WidgetsGroup from '@/components/Home/WidgetsGroup';
 import dynamic from 'next/dynamic';
+import MainLayout from '@/layouts/MainLayout';
+import Searchbar from '@/components/Pages/Home/Searchbar';
+import WidgetsGroup from '@/components/Pages/Home/WidgetsGroup';
+import useHome from '@/hooks/pages/Home/useHome';
 
 // dynamic import component
-const SearchResult = dynamic(() => import('@/components/Home/SearchResult'));
+const SearchResult = dynamic(() => import('@/components/Pages/Home/SearchResult'));
 
 const Home = () => {
   const { widgetsData, searchData, onChangeKeyword } = useHome();

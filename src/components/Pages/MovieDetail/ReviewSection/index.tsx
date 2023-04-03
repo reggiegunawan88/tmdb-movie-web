@@ -8,7 +8,7 @@ interface IReview {
   data: any;
 }
 
-const Review = ({ data }: IReview) => {
+const ReviewSection = ({ data }: IReview) => {
   const { currentReviewData, reviewInput, handleReviewInput, simulateAddReview } = useReview({ data });
 
   return (
@@ -48,4 +48,4 @@ const Review = ({ data }: IReview) => {
   );
 };
 
-export default Review;
+export default ReviewSection;
