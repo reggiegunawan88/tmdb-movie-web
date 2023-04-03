@@ -1,7 +1,6 @@
-// list of reducers for each features
 import { combineReducers } from 'redux';
-import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 /* import slicers for each features */
 import HomeSlicers from '@/store/slices/Home';
@@ -9,7 +8,7 @@ import MovieDetailSlicers from '@/store/slices/MovieDetail';
 import FavoriteMoviesSlicers from '@/store/slices/FavoriteMovies';
 import MovieReviewSlicers from '@/store/slices/Review';
 
-// initiate redux persist
+// initiate redux persist configs
 const favoritePersistConfig = {
   key: 'favorite_movies',
   storage,

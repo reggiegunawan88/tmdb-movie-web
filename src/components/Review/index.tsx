@@ -12,7 +12,7 @@ const Review = ({ data }: IReview) => {
   const { currentReviewData, reviewInput, handleReviewInput, simulateAddReview } = useReview({ data });
 
   return (
-    <div className="flex flex-col text-gray-800 p-4 gap-y-4">
+    <div className="flex flex-col text-gray-800 p-5 gap-y-4 bg-white">
       <span className="text-xl font-semibold">Review</span>
       {/* review list section */}
       {currentReviewData?.review_data?.length ? (

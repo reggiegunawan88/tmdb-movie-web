@@ -11,7 +11,7 @@ const Header = () => {
     <div className="p-4 w-full text-sm text-dark-1 bg-blue-2">
       <div className="flex flex-row justify-between items-center max-w-xl mx-auto">
         <Link passHref href="/">
-          <div className="relative w-[55px] h-10 cursor-pointer">
+          <div className="relative w-[55px] h-[40px] laptop:w-[150px] laptop:h-[50px] cursor-pointer">
             <Image alt="tmdb-logo" src="/assets/images/tmdb_mobile_logo.svg" layout="fill" />
           </div>
         </Link>

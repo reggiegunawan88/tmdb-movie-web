@@ -16,14 +16,15 @@ const Detail = () => {
   }
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col h-full bg-darkblue text-white">
+    <div className="flex flex-col bg-darkblue">
+      <div className="flex flex-col laptop:flex-row text-white max-w-xl mx-auto">
         {/* top image section */}
+        {/* movie poster: mobile mode */}
         <div
-          className="bg-no-repeat bg-cover bg-center"
+          className="bg-no-repeat bg-cover bg-center laptop:bg-darkblue"
           style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${movieData?.backdrop_path})` }}
         >
-          <div className="relative w-[97px] h-[146px] m-5">
+          <div className="block laptop:hidden relative w-[97px] h-[146px] tablet:w-[212px] tablet:h-[318px] m-5 overflow-hidden rounded-md">
             <Image
               alt="background-img"
               src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${movieData?.poster_path}`}
@@ -32,32 +33,50 @@ const Detail = () => {
             />
           </div>
         </div>
-        {/* description section */}
-        <div className="flex flex-col gap-y-3 p-4 text-center">
-          <span className="text-xl text-center">{movieData?.title}</span>
-          <div className="flex flex-row items-center justify-center gap-x-6">
-            <div className="flex flex-row items-center gap-x-2">
-              <span>80%</span>
-              <span>User Score</span>
-            </div>
-            <div className="border-l-default h-6 border-gray-500"></div>
-            <button className="flex flex-row gap-x-1" onClick={simulateToggleFavorite}>
-              <FavoriteIcon className={`${isFavorite() ? 'text-red-400' : 'text-white'}`} fontSize="medium" />
-              {isFavorite() ? <span>Added to Favorite</span> : <span>Add to Favorite</span>}
-            </button>
+        {/* movie poster: desktop mode */}
+        <div className="w-full">
+          <div className="hidden laptop:block relative w-[300px] h-[450px] m-5 overflow-hidden rounded-md">
+            <Image
+              alt="background-img"
+              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${movieData?.poster_path}`}
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
           </div>
         </div>
-        {/* genre and release date section */}
-        <div className="flex flex-col p-2 text-center">
-          <span>Released date: {formatDate(movieData?.release_date)}</span>
-          <span>{parseMovieGenreValue()}</span>
-        </div>
-        {/* overview section */}
-        <div className="flex flex-col gap-y-3 p-4">
-          <span className="text-xl font-semibold">Overview</span>
-          <p>{movieData?.overview}</p>
+
+        {/* description section */}
+        <div className="flex flex-col">
+          <div className="flex flex-col gap-y-3 p-4 text-left">
+            <span className="text-xl laptop:text-3xl font-bold">{movieData?.title}</span>
+            <div className="flex flex-row items-center gap-x-6">
+              <div className="flex flex-row items-center gap-x-2">
+                <span>80%</span>
+                <span>User Score</span>
+              </div>
+              <div className="border-l-default h-6 border-gray-500"></div>
+              <button className="flex flex-row gap-x-1" onClick={simulateToggleFavorite}>
+                <FavoriteIcon className={`${isFavorite() ? 'text-red-400' : 'text-white'}`} fontSize="medium" />
+                {isFavorite() ? <span>Added to Favorite</span> : <span>Add to Favorite</span>}
+              </button>
+            </div>
+            {/* genre and release date section */}
+            <div className="flex flex-col">
+              <span>Released date: {formatDate(movieData?.release_date)}</span>
+              <span>{parseMovieGenreValue()}</span>
+            </div>
+            {/* tagline */}
+            <span className="italic text-gray-200">{movieData?.tagline}</span>
+          </div>
+          {/* overview section */}
+          <div className="flex flex-col gap-y-3 p-4">
+            <span className="text-xl font-semibold">Overview</span>
+            <p>{movieData?.overview}</p>
+          </div>
         </div>
       </div>
+
       {/* review section */}
       <Review data={movieData} />
     </div>
