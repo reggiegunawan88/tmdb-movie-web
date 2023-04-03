@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import formatDate from '@/helpers/formatter/formatDate';
 import useCard from '@/hooks/component/Card/useCard';
 
@@ -13,13 +14,16 @@ const MovieCard = ({ data }: IProps) => {
       className="flex flex-row shadow-md rounded-md cursor-pointer laptop:transform laptop:transition laptop:duration-500 laptop:hover:scale-105"
       onClick={redirectToMovieDetail}
     >
-      <img
-        alt="movie-poster"
-        src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${data?.poster_path}`}
-        width={94}
-        height={141}
-        className="rounded-l-md object-contain"
-      />
+      <div className="w-full">
+        <div className="relative w-[94px] h-[141px]">
+          <Image
+            alt="movie-poster"
+            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${data?.poster_path}`}
+            layout="fill"
+            priority
+          />
+        </div>
+      </div>
       <div className="flex flex-col p-3 gap-y-5">
         <div className="flex flex-col">
           <span className="font-bold leading-5">{data?.original_title}</span>
