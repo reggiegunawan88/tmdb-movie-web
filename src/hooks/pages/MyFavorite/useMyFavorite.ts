@@ -1,4 +1,3 @@
-import React from 'react';
 import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
 import { RootState } from '@/store';
 

@@ -5,12 +5,12 @@ import Head from 'next/head';
 
 interface IData {
   data: {
-    title: string
-    keywords: string
-    description: string
-    ogTitle: string
-    ogDescription: string
-  }
+    title: string;
+    keywords: string;
+    description: string;
+    ogTitle: string;
+    ogDescription: string;
+  };
 }
 
 const Meta = ({ data }: IData) => {
@@ -20,7 +20,6 @@ const Meta = ({ data }: IData) => {
       <Head>
         <meta name="keywords" content={keywords || 'tmdb'} />
         <meta name="theme-color" content="#61C7B5" />
-        <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" key="favicon" />
       </Head>
       <NextSeo
@@ -31,7 +30,7 @@ const Meta = ({ data }: IData) => {
           description: ogDescription,
           type: 'website',
           locale: 'en',
-          site_name: 'TMDB Dummy Movie Website'
+          site_name: 'TMDB Dummy Movie Website',
         }}
       />
     </>
@@ -44,8 +43,8 @@ Meta.defaultProps = {
     keywords: 'TMDB, the movie database',
     description: 'TMDB Web Apps',
     ogTitle: 'The Movie Database Dummy Web',
-    ogDescription: 'TMDB Web Apps'
-  }
+    ogDescription: 'TMDB Web Apps',
+  },
 };
 
 export default Meta;

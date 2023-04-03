@@ -59,7 +59,7 @@ const Detail = () => {
         </div>
       </div>
       {/* review section */}
-      <Review />
+      <Review data={movieData} />
     </div>
   );
 };
