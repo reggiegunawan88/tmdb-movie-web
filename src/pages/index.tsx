@@ -17,7 +17,7 @@ const Home = () => {
       <Searchbar />
       <div className="flex flex-col flex-1">
         <div className="flex flex-col space-y-2">
-          <Link passHref href="/movie/popular">
+          <Link passHref href="/movie/popular" prefetch={false}>
             <div className="flex flex-row items-center gap-x-2 cursor-pointer hover:text-blue-3">
               <span className="text-xl font-semibold">Trending</span>
               <ChevronRightIcon fontSize="medium" />
@@ -35,7 +35,7 @@ const Home = () => {
           )}
         </div>
         <div className="flex flex-col space-y-2">
-          <Link passHref href="/movie/top-rated">
+          <Link passHref href="/movie/top-rated" prefetch={false}>
             <div className="flex flex-row items-center gap-x-2 cursor-pointer hover:text-blue-3 w-fit">
               <span className="text-xl font-semibold">Top Rated</span>
               <ChevronRightIcon fontSize="medium" />
