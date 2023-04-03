@@ -18,9 +18,11 @@ const DescriptionSection = ({
 }: IDescriptionSection) => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col gap-y-3 p-4 text-left">
+      <div className="flex flex-col gap-y-3 p-4 text-center laptop:text-left">
+        {/* title section */}
         <span className="text-xl laptop:text-3xl font-bold">{data?.title}</span>
-        <div className="flex flex-row items-center gap-x-6">
+        {/* rating and add to favorite section */}
+        <div className="flex flex-row gap-x-6 justify-center laptop:justify-start">
           <div className="flex flex-row items-center gap-x-2">
             <span>80%</span>
             <span>User Score</span>
