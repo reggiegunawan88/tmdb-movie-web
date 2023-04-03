@@ -8,7 +8,6 @@ interface IImageSection {
 const ImageSection = ({ data }: IImageSection) => {
   return (
     <div className="flex">
-      {/* top image section */}
       {/* movie poster: mobile mode */}
       <div
         className="w-full bg-no-repeat bg-cover bg-center laptop:bg-darkblue"
