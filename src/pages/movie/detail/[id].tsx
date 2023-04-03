@@ -8,7 +8,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import formatDate from '@/helpers/formatDate';
 
 const Detail = () => {
-  const { movieData, parseMovieGenreValue } = useMovieDetail();
+  const { movieData, parseMovieGenreValue, simulateToggleFavorite, isFavorite } = useMovieDetail();
 
   if (movieData === null) {
     return <LoadingState />;
@@ -39,9 +39,9 @@ const Detail = () => {
             <span>User Score</span>
           </div>
           <div className="border-l-default h-6 border-gray-500"></div>
-          <button className="flex flex-row gap-x-1">
-            <FavoriteIcon className="text-white" fontSize="medium" />
-            <span>Add to Favorite</span>
+          <button className="flex flex-row gap-x-1" onClick={simulateToggleFavorite}>
+            <FavoriteIcon className={`${isFavorite() ? 'text-red-400' : 'text-white'}`} fontSize="medium" />
+            {isFavorite() ? <span>Added to Favorite</span> : <span>Add to Favorite</span>}
           </button>
         </div>
       </div>

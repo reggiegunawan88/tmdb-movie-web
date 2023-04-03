@@ -1,13 +1,18 @@
 import React from 'react';
 import formatDate from '@/helpers/formatDate';
+import useCard from '@/hooks/component/Card/useCard';
 
 interface IProps {
   data: any;
 }
 
 const MovieCard = ({ data }: IProps) => {
+  const { redirectToMovieDetail } = useCard({ movieId: data?.id });
   return (
-    <div className="flex flex-row shadow-md rounded-md cursor-pointer laptop:transform laptop:transition laptop:duration-500 laptop:hover:scale-105">
+    <div
+      className="flex flex-row shadow-md rounded-md cursor-pointer laptop:transform laptop:transition laptop:duration-500 laptop:hover:scale-105"
+      onClick={redirectToMovieDetail}
+    >
       <img
         alt="movie-poster"
         src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL}${data?.poster_path}`}

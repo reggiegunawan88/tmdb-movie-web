@@ -7,7 +7,7 @@ import MainLayout from '@/layouts/MainLayout';
 const MyFavorite = () => {
   const { favoriteMovies } = useMyFavorite();
 
-  if (!favoriteMovies) {
+  if (favoriteMovies.length === 0) {
     return <MyFavoriteEmptyState />;
   }
 

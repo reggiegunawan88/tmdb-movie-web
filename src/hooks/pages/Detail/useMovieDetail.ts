@@ -3,6 +3,10 @@ import getMovieDetail from '@/services/Movie/getMovieDetail';
 import { useRouter } from 'next/router';
 
 import { ParsedUrlQuery } from 'querystring';
+import { useDispatch } from 'react-redux';
+import { saveFavoriteMovie } from '@/store/slices/FavoriteMovies';
+import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
+import { RootState } from '@/store';
 
 interface IQueryParam extends ParsedUrlQuery {
   id: string;
@@ -10,8 +14,10 @@ interface IQueryParam extends ParsedUrlQuery {
 
 const useMovieDetail = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const { id } = router?.query as IQueryParam;
   const [movieData, setMovieData] = useState(null) as any;
+  const { favoriteMovies } = useShallowEqualSelector((state: RootState) => state.favoriteMovies);
 
   const getMovieDetailData = () => {
     getMovieDetail({ movieId: id })
@@ -34,6 +40,24 @@ const useMovieDetail = () => {
     return arrStr.join(', ');
   };
 
+  const isFavorite = (): boolean => {
+    const isFavoriteMovie = favoriteMovies.some((e: any) => e?.id === movieData.id) || false;
+    return isFavoriteMovie;
+  };
+
+  const simulateToggleFavorite = () => {
+    if (isFavorite()) {
+      // remove from favorite
+      const currentFavorite = favoriteMovies;
+      const newFavorite = currentFavorite.filter((item: any) => item?.id !== movieData?.id); // filter unmatched id value
+      return dispatch(saveFavoriteMovie(newFavorite));
+    }
+
+    // add to favorite
+    const newFavorite = [...favoriteMovies, movieData];
+    return dispatch(saveFavoriteMovie(newFavorite));
+  };
+
   useEffect(() => {
     if (router.isReady) {
       getMovieDetailData();
@@ -43,6 +67,8 @@ const useMovieDetail = () => {
   return {
     movieData,
     parseMovieGenreValue,
+    simulateToggleFavorite,
+    isFavorite,
   };
 };
 
