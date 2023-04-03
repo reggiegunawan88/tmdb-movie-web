@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import getMovieDetail from '@/services/Movie/getMovieDetail';
+import { useDispatch } from 'react-redux';
+import { ParsedUrlQuery } from 'querystring';
 import { useRouter } from 'next/router';
 
-import { ParsedUrlQuery } from 'querystring';
-import { useDispatch } from 'react-redux';
-import { saveFavoriteMovie } from '@/store/slices/FavoriteMovies';
-import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import { RootState } from '@/store';
+import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
+import { saveFavoriteMovie } from '@/store/slices/FavoriteMovies';
+import getMovieDetail from '@/services/Movie/getMovieDetail';
 
 interface IQueryParam extends ParsedUrlQuery {
   id: string;

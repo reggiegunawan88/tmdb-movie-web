@@ -19,7 +19,6 @@ const Meta = ({ data }: IData) => {
     <>
       <Head>
         <meta name="keywords" content={keywords || 'tmdb'} />
-        <meta name="theme-color" content="#61C7B5" />
         <link rel="icon" href="/favicon.ico" key="favicon" />
       </Head>
       <NextSeo
@@ -39,10 +38,10 @@ const Meta = ({ data }: IData) => {
 
 Meta.defaultProps = {
   data: {
-    title: 'The Movie Database Dummy Web',
-    keywords: 'TMDB, the movie database',
+    title: 'The Movie Database Dummy Website - Reggie Gunawan',
+    keywords: 'TMDB, the movie database, tmdb.org',
     description: 'TMDB Web Apps',
-    ogTitle: 'The Movie Database Dummy Web',
+    ogTitle: 'The Movie Database Dummy Web - Reggie Gunawan',
     ogDescription: 'TMDB Web Apps',
   },
 };

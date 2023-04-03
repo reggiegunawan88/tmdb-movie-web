@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { RootState } from '@/store';
 import { useDispatch } from 'react-redux';
+
 import { setPopularMovies, setTopRatedMovies } from '@/store/slices/Home';
 import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import getPopularMovies from '@/services/Movie/getPopularMovies';

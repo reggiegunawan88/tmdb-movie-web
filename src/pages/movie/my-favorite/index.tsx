@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
+import MainLayout from '@/layouts/MainLayout';
 import MovieCard from '@/components/Card/MovieCard';
 import useMyFavorite from '@/hooks/pages/MyFavorite/useMyFavorite';
-import MainLayout from '@/layouts/MainLayout';
-import dynamic from 'next/dynamic';
 
 const MyFavoriteEmptyState = dynamic(() => import('@/components/EmptyState/MyFavoriteEmptyState'));
 

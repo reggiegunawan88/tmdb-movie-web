@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+
 import formatDate from '@/helpers/formatter/formatDate';
 import useCard from '@/hooks/component/Card/useCard';
 
@@ -9,6 +10,7 @@ interface IProps {
 
 const MovieCard = ({ data }: IProps) => {
   const { redirectToMovieDetail } = useCard({ movieId: data?.id });
+
   return (
     <div
       className="flex flex-row shadow-md rounded-md cursor-pointer laptop:transform laptop:transition laptop:duration-500 laptop:hover:scale-105"

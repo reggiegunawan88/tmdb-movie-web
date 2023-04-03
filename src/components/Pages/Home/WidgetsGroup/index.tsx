@@ -1,8 +1,9 @@
 import React from 'react';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Link from 'next/link';
 import MovieThumbnailCard from '@/components/Card/MovieThumbnailCard';
 import MovieThumbnailSkeleton from '@/components/Skeleton/Home/MovieThumbnailSkeleton';
+
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 interface IWidgetsGroup {
   data: {

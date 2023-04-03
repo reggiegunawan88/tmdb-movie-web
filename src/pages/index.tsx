@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-
 import dynamic from 'next/dynamic';
 import MainLayout from '@/layouts/MainLayout';
 import Searchbar from '@/components/Pages/Home/Searchbar';

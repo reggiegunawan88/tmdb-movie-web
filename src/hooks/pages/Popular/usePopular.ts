@@ -1,5 +1,5 @@
-import getPopularMovies from '@/services/Movie/getPopularMovies';
 import { useEffect, useState } from 'react';
+import getPopularMovies from '@/services/Movie/getPopularMovies';
 
 const usePopular = () => {
   const [popularMovies, setPopularMovies] = useState<Array<any>>([]);

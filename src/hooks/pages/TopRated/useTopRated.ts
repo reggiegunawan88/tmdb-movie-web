@@ -1,5 +1,5 @@
-import getTopRatedMovies from '@/services/Movie/getTopRatedMovies';
 import { useEffect, useState } from 'react';
+import getTopRatedMovies from '@/services/Movie/getTopRatedMovies';
 
 const useTopRated = () => {
   const [topRatedMovies, setTopRatedMovies] = useState<Array<any>>([]);

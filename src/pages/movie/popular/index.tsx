@@ -1,8 +1,8 @@
+import React, { ReactNode } from 'react';
+import MainLayout from '@/layouts/MainLayout';
 import MovieCard from '@/components/Card/MovieCard';
 import LoadingState from '@/components/LoadingState';
 import usePopular from '@/hooks/pages/Popular/usePopular';
-import MainLayout from '@/layouts/MainLayout';
-import React, { ReactNode } from 'react';
 
 const Popular = () => {
   const { popularMovies } = usePopular();
