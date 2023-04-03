@@ -1,5 +1,5 @@
 import React from 'react';
-import formatDate from '@/helpers/formatDate';
+import formatDate from '@/helpers/formatter/formatDate';
 import useCard from '@/hooks/component/Card/useCard';
 
 interface IProps {

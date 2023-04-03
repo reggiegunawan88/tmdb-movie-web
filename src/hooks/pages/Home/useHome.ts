@@ -1,4 +1,4 @@
-import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
+import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import getPopularMovies from '@/services/Movie/getPopularMovies';
 import getTopRatedMovies from '@/services/Movie/getTopRatedMovies';
 import { RootState } from '@/store';

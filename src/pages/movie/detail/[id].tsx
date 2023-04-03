@@ -5,7 +5,7 @@ import LoadingState from '@/components/LoadingState';
 import Image from 'next/image';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import formatDate from '@/helpers/formatDate';
+import formatDate from '@/helpers/formatter/formatDate';
 import Review from '@/components/Review';
 
 const Detail = () => {

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
 import { useDispatch } from 'react-redux';
 import { saveFavoriteMovie } from '@/store/slices/FavoriteMovies';
-import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
+import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import { RootState } from '@/store';
 
 interface IQueryParam extends ParsedUrlQuery {

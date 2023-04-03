@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
+import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import { RootState } from '@/store';
-import formatDate from '@/helpers/formatDate';
+import formatDate from '@/helpers/formatter/formatDate';
 import { useDispatch } from 'react-redux';
 import { storeMovieReviewList } from '@/store/slices/Review';
 

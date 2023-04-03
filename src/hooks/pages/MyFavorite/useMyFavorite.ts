@@ -1,4 +1,4 @@
-import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
+import useShallowEqualSelector from '@/helpers/redux/useShallowEqualSelector';
 import { RootState } from '@/store';
 
 const useMyFavorite = () => {
