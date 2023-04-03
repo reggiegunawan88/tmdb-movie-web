@@ -14,10 +14,12 @@ interface IQueryParam extends ParsedUrlQuery {
 
 const useMovieDetail = () => {
   const router = useRouter();
-  const dispatch = useDispatch();
   const { id } = router?.query as IQueryParam;
-  const [movieData, setMovieData] = useState(null) as any;
+  const dispatch = useDispatch();
   const { favoriteMovies } = useShallowEqualSelector((state: RootState) => state.favoriteMovies);
+
+  // local state
+  const [movieData, setMovieData] = useState(null) as any;
 
   const getMovieDetailData = () => {
     getMovieDetail({ movieId: id })
@@ -30,7 +32,7 @@ const useMovieDetail = () => {
       });
   };
 
-  // output: genre1, genre2, etc
+  // output: "genre1, genre2"
   const parseMovieGenreValue = () => {
     const arrStr: Array<string> = [];
 
