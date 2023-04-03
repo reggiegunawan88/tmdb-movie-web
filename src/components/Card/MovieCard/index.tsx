@@ -16,7 +16,7 @@ const MovieCard = ({ data }: IProps) => {
       className="flex flex-row shadow-md rounded-md cursor-pointer laptop:transform laptop:transition laptop:duration-500 laptop:hover:scale-105"
       onClick={redirectToMovieDetail}
     >
-      <div className="w-full">
+      <div>
         <div className="relative w-[94px] h-[141px]">
           <Image
             alt="movie-poster"
@@ -31,7 +31,7 @@ const MovieCard = ({ data }: IProps) => {
           <span className="font-bold leading-5">{data?.original_title}</span>
           <span className="text-sm text-gray-500">{formatDate(data?.release_date)}</span>
         </div>
-        <p className="text-sm leading-5 line-clamp-2">{data?.overview}</p>
+        <p className="text-sm leading-5 line-clamp-2">{data?.overview || '-'}</p>
       </div>
     </div>
   );
