@@ -1,6 +1,6 @@
 import MovieCard from '@/components/Card/MovieCard';
 import LoadingState from '@/components/LoadingState';
-import usePopular from '@/hooks/pages/usePopular';
+import usePopular from '@/hooks/pages/Popular/usePopular';
 import MainLayout from '@/layouts/MainLayout';
 import React, { ReactNode } from 'react';
 

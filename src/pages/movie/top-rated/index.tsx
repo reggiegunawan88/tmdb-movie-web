@@ -1,6 +1,6 @@
 import MovieCard from '@/components/Card/MovieCard';
 import LoadingState from '@/components/LoadingState';
-import useTopRated from '@/hooks/pages/useTopRated';
+import useTopRated from '@/hooks/pages/TopRated/useTopRated';
 import MainLayout from '@/layouts/MainLayout';
 import React, { ReactNode } from 'react';
 

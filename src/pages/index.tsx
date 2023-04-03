@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import MainLayout from '@/layouts/MainLayout';
-import useHome from '@/hooks/pages/useHome';
+import useHome from '@/hooks/pages/Home/useHome';
 import Searchbar from '@/components/Searchbar';
 
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
