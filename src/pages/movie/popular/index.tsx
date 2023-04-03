@@ -16,15 +16,11 @@ const Popular = () => {
       <div className="flex flex-col flex-1">
         <div className="flex flex-col space-y-2">
           <span className="text-xl font-semibold">Popular Movies</span>
-          {popularMovies ? (
-            <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 p-2 gap-2 hide-scrollbar">
-              {popularMovies?.map((item: any) => (
-                <MovieCard key={item?.id} data={item} />
-              ))}
-            </div>
-          ) : (
-            <LoadingState />
-          )}
+          <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 p-2 gap-2 hide-scrollbar">
+            {popularMovies?.map((item: any) => (
+              <MovieCard key={item?.id} data={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

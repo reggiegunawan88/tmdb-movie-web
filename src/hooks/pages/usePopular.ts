@@ -1,18 +1,13 @@
-import useShallowEqualSelector from '@/helpers/useShallowEqualSelector';
 import getPopularMovies from '@/services/Movie/getPopularMovies';
-import { RootState } from '@/store';
-import { setPopularMovies } from '@/store/slices/Home';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 const usePopular = () => {
-  const dispatch = useDispatch();
-  const { popularMovies } = useShallowEqualSelector((state: RootState) => state.home);
+  const [popularMovies, setPopularMovies] = useState<Array<any>>([]);
 
   const getPopularMoviesData = () => {
     getPopularMovies()
       .then((response: any) => {
-        dispatch(setPopularMovies(response?.results));
+        setPopularMovies(response?.results);
       })
       .catch(error => {
         // handle error
