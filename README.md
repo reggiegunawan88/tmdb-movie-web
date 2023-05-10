@@ -1,6 +1,4 @@
 TMDB Dummy Website Page
-Accelbyte Front End Test Assignment
-
 by Reggie Gunawan
 
 How to run:
